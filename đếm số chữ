@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cstring>
+#include <cctype>
+using namespace std;
+int demtu(char xau[])
+{
+	int dem = 0;
+	for (int i = 0; i < strlen(xau); i++)
+	{
+		if (isalpha(xau[i]))
+		{
+			dem++;
+		}
+
+	}
+	return dem;
+}
+int main()
+{
+	char xau[100];
+	cin.getline(xau, 100);
+	cout << demtu(xau) << endl;
+	return 0;
+}
