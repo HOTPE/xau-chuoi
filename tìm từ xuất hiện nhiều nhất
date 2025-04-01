@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cstring>
+#include <cctype>
+#include <string>
+#include <map>
+using namespace std;
+void tuxhnhieunhat(char xau[])
+{
+	int max = 0;
+	string tuxh;
+	map<string, int> count;
+	for (int i = 0; i < strlen(xau); i++)
+	{
+		if (isalpha(xau[i]))
+		{
+			int j = i;
+			string word = "";
+			while (j < strlen(xau) && isalpha(xau[j]))
+			{
+				word += xau[j];
+				j++;
+			}
+			count[word]++;
+			if (max < count[word])
+			{
+				max = count[word];
+				tuxh = word;
+			}
+			i = j;
+		}
+	}
+	cout << tuxh << endl;
+}
+int main()
+{
+	char xau[100];
+	cin.getline(xau, 100);
+	tuxhnhieunhat(xau);
+	return 0;
+}
