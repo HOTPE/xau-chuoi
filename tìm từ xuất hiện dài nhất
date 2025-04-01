@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cstring>
+#include <cctype>
+using namespace std;
+void tuxhdainhat(char xau[])
+{
+	int max = 0;
+	char tuxh[100] = "";
+	for (int i = 0; i < strlen(xau); i++)
+	{
+		if (isalpha(xau[i]))
+		{
+			int j = i;
+			int count = 0;
+			while (j < strlen(xau) && isalpha(xau[j]))
+			{
+				count++;
+				j++;
+			}
+			if (max < count)
+			{
+				max = count;
+				strncpy_s(tuxh, &xau[i], count);
+			}
+			i = j;
+		}
+	}
+	cout << tuxh << endl;
+}
+int main()
+{
+	char xau[100];
+	cin.getline(xau, 100);
+	tuxhdainhat(xau);
+	return 0;
+}
