@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cstring>
+#include <cctype>
+#include <string>
+#include <map>
+using namespace std;
+void xoadauphay(char xau[])
+{
+	int i = 0, j = 0;
+	while (xau[i])
+	{
+		if (xau[i] != ',')
+		{
+			xau[j++] = xau[i];
+		}
+		i++;
+	}
+	xau[j] = '\0';
+}
+int main()
+{
+	char xau[100];
+	cin.getline(xau, 100);
+	xoadauphay(xau);
+	cout << xau << endl;
+	return 0;
+}
