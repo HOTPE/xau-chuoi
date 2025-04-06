@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cstring>
+#include <cctype>
+#include <string>
+#include <map>
+using namespace std;
+int Demkytu(char xau[], char kytu)
+{
+	int i = 0;
+	int dem = 0;
+	while (xau[i] != '\0')
+	{
+		if (xau[i] == kytu)
+		{
+			dem++;
+		}
+		i++;
+	}
+	return dem;
+}
+int main()
+{
+	char xau[100];
+	cin.getline(xau, 100);
+	char kytu;
+	cin >> kytu;
+	cout << Demkytu(xau, kytu) << endl;
+	return 0;
+}
