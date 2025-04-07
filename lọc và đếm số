@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cctype>
+using namespace std;
+int main()
+{
+	char xau[100];
+	cin.getline(xau, 100);
+	int dem = 0;
+	for (int i = 0; xau[i] != '\0'; i++)
+	{
+		if (isdigit(xau[i]))
+		{
+			cout << xau[i] << " ";
+			dem++;
+		}
+	}
+	cout << "\n" << dem << endl;
+	return 0;
+}
