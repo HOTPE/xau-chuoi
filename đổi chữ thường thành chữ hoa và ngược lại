@@ -1,0 +1,21 @@
+#include <iostream>
+#include <cctype>
+using namespace std;
+void daonguoc(char xau[])
+{
+	for (int i = 0; i < strlen(xau); i++)
+	{
+		if (islower(xau[i]))
+			xau[i] = toupper(xau[i]);
+		else if (isupper(xau[i]))
+			xau[i] = tolower(xau[i]);
+	}
+}
+int main()
+{
+	char xau[100];
+	cin.getline(xau, 100);
+	daonguoc(xau);
+	cout << xau << endl;
+	return 0;
+}
