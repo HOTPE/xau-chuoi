@@ -1,0 +1,24 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <cmath>
+using namespace std;
+int gcd(int a, int b)
+{
+	if (b == 0)
+		return a;
+	return gcd(b ,a % b);
+}
+int main()
+{
+	string str1, str2;
+	cin >> str1 >> str2;
+	if (str1 + str2 != str2 + str1)
+		cout << "" << endl;
+	else
+	{
+		int tmp = gcd(str1.size(), str2.size());
+		cout<<str1.substr(0, tmp);
+	}
+	return 0;
+}
