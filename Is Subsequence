@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+#include <set>
+using namespace std;
+bool IsSubsequence(string s, string t)
+{
+	int sp = 0;
+	int tp = 0;
+	while (sp < s.length() && tp < t.length())
+	{
+		if (s[sp] == t[tp])
+			sp++;
+		tp++;
+	}
+	return sp == s.length();
+}
+int main()
+{
+	string s, t;
+	//string tmp;
+	cin >> s;
+	cin >> t;
+	if (IsSubsequence(s, t))
+		cout << "true" << endl;
+	else
+		cout << "false" << endl;
+	return 0;
+}
